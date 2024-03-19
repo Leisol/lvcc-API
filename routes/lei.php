@@ -25,7 +25,7 @@ Route::get('/bilina', function() {
 
 Route::patch('/user', [UserController::class, 'index']);
 
-Route::get('/greeting', function() {
+Route::post('/greeting', function() {
     return 'The universe contained in your eyes.';
 });
 
@@ -43,3 +43,29 @@ Route::any('/updateUserInfoTwo', function() {
 Route::get('/requestEmail', function(Request $request) {
     return $request->name . ' - ' . $request->email; 
 });
+
+Route::any('/updateUserInfoTwo', function() {
+    return 'This route accepts any http verb.';
+});
+
+Route::patch('/patch', function(Request $request) {
+    return 'This is made using the PATCH method.';
+});
+
+Route::post('/post', function(Request $request) {
+    return 'This is made using the DELETE method.';
+});
+
+Route::put('/put', function(Request $request) {
+    return 'This is made usinG the PUT method.';
+});
+
+Route::options('/options', function(Request $request) {
+    return 'This is made usign the OPTIONS method.';
+});
+
+Route::delete('/delete', function(Request $request) {
+    return 'This is made usign the DELETE method.';
+});
+
+?>
